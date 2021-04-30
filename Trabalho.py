@@ -9,5 +9,6 @@ def extrai_naipe(carta):
     for i in carta:
         if i=='♦' or i=='♥' or i=='♣' or i=='♠':
             return i
-def extrai_naipe(carta):
-    return carta[len(carta)-1]
+def extrai_valor(carta):
+    carta =carta.replace(carta[len(carta)-1],"")
+    return carta
