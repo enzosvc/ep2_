@@ -9,3 +9,5 @@ def extrai_naipe(carta):
     for i in carta:
         if i=='♦' or i=='♥' or i=='♣' or i=='♠':
             return i
+def extrai_naipe(carta):
+    return carta[len(carta)-1]
