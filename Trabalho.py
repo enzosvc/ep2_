@@ -12,3 +12,14 @@ def extrai_naipe(carta):
 def extrai_valor(carta):
     carta =carta.replace(carta[len(carta)-1],"")
     return carta
+
+def lista_movimentos_possiveis(lista,indice):
+    lista_de_movimentos=[]
+    if indice-1<0:
+        return lista_de_movimentos
+    if lista[indice][0]==lista[indice-1][0] or lista[indice][len(lista[indice])-1]==lista[indice-1][len(lista[indice-1])-1]:
+        lista_de_movimentos.append(1)
+    if indice>2:
+        if lista[indice][0]==lista[indice-3][0] or lista[indice][len(lista[indice])-1]==lista[indice-3][len(lista[indice-3])-1]:
+            lista_de_movimentos.append(3)
+    return lista_de_movimentos
