@@ -80,6 +80,9 @@ while possui_movimentos_possiveis(baralho):
     #fim da numeracao da lista
     print(''.ljust(200))
     n=int(input('Coloque aqui uma posição EXISTENTE de uma carta que quer mover(1-{0}): '.format(len(lista_numerada))))
+    while n<1 or n>len(lista_numerada):
+        print('Tente colocar um valor dentro da escala mostrada')
+        n=int(input('Coloque aqui uma posição EXISTENTE de uma carta que quer mover(1-{0}): '.format(len(lista_numerada))))
     while lista_movimentos_possiveis(baralho,n-1)==[]:
         print('Escolha outra posição')
         print()
@@ -110,7 +113,11 @@ while possui_movimentos_possiveis(baralho):
         z=2
     print()
     posicao_de_escolha=int(input('Digite a posição aqui({0}-{1}): '.format(l,z)))
-    #
+    while posicao_de_escolha!=l and posicao_de_escolha!=z:
+        print('Tente digitar uma opção possível de ser empilhada')
+        print()
+        posicao_de_escolha=int(input('Digite a posição aqui({0}-{1}): '.format(l,z)))
+
     #
     #Momento de mudar e empilhar o baralho:
     if posicao_de_escolha==1:
@@ -139,7 +146,11 @@ while possui_movimentos_possiveis(baralho):
         print('Você PERDEU.') 
         print()
     if len(baralho)>1 and possui_movimentos_possiveis(baralho)==0 or len(baralho)==1: 
-        pergunta=input('Gostaria de jogar novamente?: ')
+        pergunta=input('Gostaria de jogar novamente?(responda sim ou não): ')
+        while pergunta!='sim' and pergunta!='não':
+            print('--------------------------')
+            print('coloque uma resposta válida')
+            pergunta=input('Gostaria de jogar novamente?(responda sim ou não): ')
         if pergunta=='sim':
             baralho=cria_baralho()
         if pergunta=='não':
