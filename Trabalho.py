@@ -68,7 +68,6 @@ print('===================')
 while possui_movimentos_possiveis(baralho):
     x=1
     lista_numerada=[]
-    print('Paciência Acordeão')
     print('===================')
     print('Atual Situação:')
     print('-------------------')
