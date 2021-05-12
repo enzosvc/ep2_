@@ -140,7 +140,6 @@ while possui_movimentos_possiveis(baralho):
         print('============================')
         print('PARABÉNS, VOCÊ VENCEU!!!!!!')
         print('============================')
-        pergunta=input('Gostaria de jogar novamente?: ')
     if len(baralho)>1 and possui_movimentos_possiveis(baralho)==0:
         print('============================')
         print('Você PERDEU.') 
